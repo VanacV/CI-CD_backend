@@ -1,5 +1,0 @@
-# railway.toml
-[build]
-service = "backend" # Название сервиса бэкенда на Railway
-path = "fullstack_backend" # Путь к папке бэкенда
-dockerfile = "fullstack_backend/Dockerfile"
