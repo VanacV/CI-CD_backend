@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://ci-cdbackend-production.up.railway.app/allUsers")
+@CrossOrigin(origins = "https://ci-cdbackend-production.up.railway.app")
 public class UserController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class UserController {
                 .orElseThrow(()->new UserNotFoundException(id));
     }
 
-    @CrossOrigin
+
     @PutMapping("/users/{id}")
     User updateUser(@RequestBody User newUser, @PathVariable Long id){
         return userRepository.findById(id)
