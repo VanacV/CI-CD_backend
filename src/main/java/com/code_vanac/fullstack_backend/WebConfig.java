@@ -10,7 +10,9 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Применяется ко всем путям
-                .allowedOrigins("https://ci-cdfrontend-production.up.railway.app") // Разрешенный домен
+                .allowedOrigins(
+                        "http://localhost:3000",
+                        "https://ci-cdfrontend-production.up.railway.app") // Разрешенный домен
                 .allowedMethods("GET", "POST", "PUT", "DELETE") // Разрешенные методы
                 .allowCredentials(true);
     }
