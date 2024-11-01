@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
-
+    @CrossOrigin
     @PostMapping("/users")
     User newUser(@RequestBody User newUser){
         return userRepository.save(newUser);
@@ -24,7 +24,7 @@ public class UserController {
     private List<User> getAllUsers(){
         return userRepository.findAll();
     }
-    
+    @CrossOrigin
     @GetMapping("/user/{id}")
     User getUserById(@PathVariable Long id){
         return userRepository.findById(id)
